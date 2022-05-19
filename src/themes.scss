@@ -1,0 +1,18 @@
+.app {
+  --primary-background: #292929;
+  --primary-text: #e9ecf0;
+  --secondary-text: #e9ecf0;
+  --main-color: #bb86fc;
+  --caret-color: #f44c7f;
+  --sub-color: #939eae;
+  --sub-alt-color: #000000;
+  --sub-alt-color: #2e343d;
+  --error-color: #da3333;
+  --error-extra-color: #791717;
+  --colorful-error-color: #c5da33;
+  --colorful-error-extra-color: #849224;
+}
+
+@function color($color-name) {
+  @return var(--#{$color-name});
+}
