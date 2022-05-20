@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { TailSpin } from 'react-loader-spinner'
+import { toast } from 'react-toastify'
 import './FormInput.scss'
 
 const FormInput = ({ handlePromptFormSubmit, loading }) => {
@@ -7,7 +8,17 @@ const FormInput = ({ handlePromptFormSubmit, loading }) => {
 
   // Fetches random sample prompt from samplePrompts.js array and enters it into the prompt form
   const generateSamplePrompt = () => {
+    if (loading) {
+      return toast.error('Please wait until previous request has returned.')
+    }
     setPromptVal('How do I make a cake?')
+  }
+
+  const handleTextareaChange = e => {
+    // Don't allow input when loading
+    if (loading) return
+
+    setPromptVal(e.target.value)
   }
 
   return (
@@ -19,7 +30,7 @@ const FormInput = ({ handlePromptFormSubmit, loading }) => {
           id='prompt-input'
           placeholder='Enter Prompt...'
           value={promptVal}
-          onChange={e => setPromptVal(e.target.value)}
+          onChange={handleTextareaChange}
         />
       </label>
       <div className='prompt-actions'>
