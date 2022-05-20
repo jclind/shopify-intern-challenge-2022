@@ -1,19 +1,30 @@
 .app {
   --primary-background: #292929;
+  --secondary-background: #333333;
   --primary-text: #e9ecf0;
   --secondary-text: #94989e;
   --tertiary-text: #6f7277;
   --primary-color: #bb86fc;
+
   --input-border-color: #7a7979;
   --caret-color: #f44c7f;
   --sub-color: #939eae;
   --sub-alt-color: #000000;
   --sub-alt-color: #2e343d;
-  --error-color: #da3333;
+  --error-color: #ff5f5f;
   --error-extra-color: #791717;
   --colorful-error-color: #c5da33;
   --colorful-error-extra-color: #849224;
   --outline: #bb86fc;
+}
+
+.app.light-theme {
+  // --primary-background: #e9ecf0;
+  // --secondary-background: #e0dede;
+  // --primary-text: #292929;
+  // --secondary-text: #333333;
+  // --tertiary-text: #6f7277;
+  // --primary-color: #bb86fc;
 }
 
 @function color($color-name) {

@@ -1,12 +1,24 @@
 import React from 'react'
+import { BiTrash } from 'react-icons/bi'
+import './PromptHistoryItem.scss'
 
-const PromptHistoryItem = ({ prompt }) => {
+const PromptHistoryItem = ({ prompt, removePrompt }) => {
   console.log(prompt)
   return (
-    <div>
-      <div>id: {prompt.id}</div>
-      <div>prompt: {prompt.prompt}</div>
-      <div>response: {prompt.choices[0].text}</div>
+    <div className='prompt-history-item'>
+      <div className='text-section prompt'>
+        <label>Prompt:</label>
+        <p className='text'>{prompt.prompt}</p>
+      </div>
+      <div className='text-section response'>
+        <label>Response:</label>
+        <p className='text'>{prompt.choices[0].text}</p>
+      </div>
+      <div className='item-actions'>
+        <button className='delete' onClick={() => removePrompt(prompt.id)}>
+          <BiTrash className='icon' />
+        </button>
+      </div>
     </div>
   )
 }

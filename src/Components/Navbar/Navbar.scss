@@ -1,0 +1,41 @@
+@import '../../index.scss';
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 5rem;
+  width: 100%;
+  .nav-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+    max-width: $max-nav-width;
+
+    .right {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      a {
+        .icon {
+          height: 26px;
+          width: 26px;
+          color: $secondary-text;
+        }
+        &:hover {
+          .icon {
+            color: $primary-text;
+          }
+        }
+      }
+    }
+  }
+}

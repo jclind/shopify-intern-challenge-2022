@@ -5,14 +5,19 @@
 // VARIABLES
 
 $primary-background: color(primary-background);
+$secondary-background: color(secondary-background);
 $primary-text: color(primary-text);
 $secondary-text: color(secondary-text);
 $tertiary-text: color(tertiary-text);
 $primary-color: color(primary-color);
 
+$error-color: color(error-color);
+
 $font-family: 'Montserrat', sans-serif;
 
 $max-form-width: 550px;
+
+$max-nav-width: 800px;
 
 // Input/textarea variables
 $input-border-color: color(input-border-color);
@@ -31,6 +36,8 @@ body {
   height: 100%;
 }
 .app {
+  display: flex;
+  flex-direction: column;
   overflow: auto;
   height: 100%;
   width: 100%;
@@ -38,6 +45,10 @@ body {
   background: $primary-background;
   color: $primary-text;
   font-family: $font-family;
+
+  .page-content {
+    flex: 1 0 auto;
+  }
 }
 
 p {
@@ -90,3 +101,8 @@ textarea {
     color: $primary-color;
   }
 }
+
+// NOTIFICATIONS STYLES
+// .Toastify__toast {
+//   background
+// }

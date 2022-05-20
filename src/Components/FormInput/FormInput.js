@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { toast } from 'react-toastify'
 import './FormInput.scss'
 
 const FormInput = ({ handlePromptFormSubmit }) => {
@@ -6,12 +7,6 @@ const FormInput = ({ handlePromptFormSubmit }) => {
 
   const handlePromptChange = e => {
     const newVal = e.target.value
-
-    // Prompt cannot exceed 1000 characters
-    if (newVal.length >= 1000) {
-      return console.log('prompt cannot be more than 1000 characters')
-      // !ERROR: prompt cannot be more than 1000 characters (add character counter)
-    }
 
     return setPromptVal(e.target.value)
   }

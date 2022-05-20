@@ -1,0 +1,210 @@
+@import '../../index.scss';
+
+.light-dark-toggle-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 58px;
+  height: 28px;
+  border-radius: 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  outline: 2px solid $input-border-color;
+  border-radius: 15px !important;
+  background: $secondary-background !important;
+
+  // &:focus {
+  //   outline: 2px solid $primary-color;
+  // }
+
+  .icon {
+    height: 18px;
+    width: 18px;
+  }
+
+  .indicator-icon {
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    overflow: visible;
+    right: 0.45rem;
+    visibility: none;
+    opacity: 0;
+    stroke-width: 0.8;
+    transform: visibility 0s, opacity 1s;
+  }
+  .indicator-icon.toggle {
+    -webkit-animation-name: show_icon;
+    -moz-animation-name: show_icon;
+    -ms-animation-name: show_icon;
+    animation-name: show_icon;
+    -webkit-animation-duration: 0.4s;
+    -moz-animation-duration: 0.4s;
+    -ms-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    // visibility: visible;
+    opacity: 1;
+  }
+  .indicator-icon.light {
+    right: auto;
+    left: 0.45rem;
+  }
+}
+
+@keyframes show_icon {
+  0% {
+    visibility: 1;
+    opacity: 0;
+    transform: translateX(4%);
+    transform: rotate(15deg);
+  }
+  40% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(2%);
+    transform: rotate(-7deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-2%);
+    transform: rotate(0);
+  }
+}
+@-webkit-keyframes show_icon {
+  0% {
+    -webkit-visibility: 1;
+    -webkit-opacity: 0;
+    -webkit-transform: translateX(4%);
+    -webkit-transform: rotate(15deg);
+  }
+  40% {
+    -webkit-opacity: 0.8;
+  }
+  50% {
+    -webkit-transform: translateX(2%);
+    -webkit-transform: rotate(-7deg);
+  }
+  100% {
+    -webkit-opacity: 1;
+    -webkit-transform: translateX(-2%);
+    -webkit-transform: rotate(0);
+  }
+}
+
+// Circle
+.circle-icon {
+  position: absolute;
+  overflow: visible;
+  left: 0.35rem;
+  stroke-width: 1.5;
+}
+.circle-icon.light {
+  right: 0.35rem;
+  transform: translateX(135%);
+  -webkit-animation-name: move_circle_right;
+  -moz-animation-name: move_circle_right;
+  -ms-animation-name: move_circle_right;
+  animation-name: move_circle_right;
+  -webkit-animation-duration: 0.4s;
+  -moz-animation-duration: 0.4s;
+  -ms-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+}
+.circle-icon.dark {
+  right: 0.35rem;
+  transform: translateX(0%);
+  -webkit-animation-name: move_circle_left;
+  -moz-animation-name: move_circle_left;
+  -ms-animation-name: move_circle_left;
+  animation-name: move_circle_left;
+  -webkit-animation-duration: 0.4s;
+  -moz-animation-duration: 0.4s;
+  -ms-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+}
+
+@-moz-keyframes move_circle_right {
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+  50% {
+    -webkit-transform: translateX(145%);
+  }
+  70% {
+    -webkit-transform: translateX(135%);
+  }
+  100% {
+    -webkit-transform: translateX(130%);
+  }
+}
+@-webkit-keyframes move_circle_right {
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+  50% {
+    -webkit-transform: translateX(145%);
+  }
+  70% {
+    -webkit-transform: translateX(135%);
+  }
+  100% {
+    -webkit-transform: translateX(130%);
+  }
+}
+@-o-keyframes move_circle_right {
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+  50% {
+    -webkit-transform: translateX(145%);
+  }
+  70% {
+    -webkit-transform: translateX(135%);
+  }
+  100% {
+    -webkit-transform: translateX(130%);
+  }
+}
+@keyframes move_circle_right {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(145%);
+  }
+  70% {
+    transform: translateX(135%);
+  }
+  100% {
+    transform: translateX(130%);
+  }
+}
+@keyframes move_circle_left {
+  0% {
+    transform: translateX(150%);
+  }
+  50% {
+    transform: translateX(-10%);
+  }
+  70% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@-webkit-keyframes move_circle_left {
+  0% {
+    -webkit-transform: translateX(150%);
+  }
+  50% {
+    -webkit-transform: translateX(-10%);
+  }
+  70% {
+    -webkit-transform: translateX(5%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}

@@ -1,0 +1,26 @@
+@import '../../index.scss';
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: fit-content;
+  padding: 1.5rem 0;
+  width: 100%;
+
+  .footer-title {
+    font-size: 1rem;
+    color: $tertiary-text;
+    font-weight: 500;
+  }
+  .signature {
+    font-size: 0.8rem;
+    color: $tertiary-text;
+    a {
+      color: $primary-color;
+    }
+  }
+}

@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
-import './FormContainer.scss'
+import React, { useState, useEffect } from 'react'
 import FormInput from '../FormInput/FormInput'
+import { toast } from 'react-toastify'
+
+import './FormContainer.scss'
 
 const FormContainer = ({ addPrompt }) => {
-  const [error, setError] = useState('')
-
   const fetchPromptResponse = async prompt => {
-    console.log('1')
     return await fetch(
       'https://api.openai.com/v1/engines/text-davinci-002/completions',
       {
@@ -19,45 +18,45 @@ const FormContainer = ({ addPrompt }) => {
         body: JSON.stringify({
           prompt,
           temperature: 0,
-          max_tokens: 60,
+          max_tokens: 100,
         }),
       }
     )
       .then(res => {
         if (res.status >= 400 && res.status < 600) {
-          throw new Error('Bad response from server')
+          Promise.reject('Bad response from server')
         }
-        console.log('2')
         return res.json()
       })
       .then(res => {
-        console.log('3')
         return { data: { ...res, prompt }, err: null }
       })
       .catch(err => {
-        console.log('4 error')
-        return { err }
+        return { err: err.message }
       })
   }
 
   // Handles prompt submittion errors and calls fetchPromptResponse and addResponse if no error
   const handlePromptFormSubmit = async prompt => {
-    setError('')
-
+    // Show error if prompt is submitted with no length
     if (prompt.length <= 0) {
-      console.log('error')
-      return setError('Prompt must be 1 or more characters long.')
+      return toast.error('Prompt must be 1 or more characters long')
+    }
+    if (prompt.length > 1000) {
+      return toast.error('Prompt must be 1000 characters or less')
     }
 
+    // Fetch prompt response from api
     const response = await fetchPromptResponse(prompt)
 
+    console.log(response)
+    // Catch possible fetch errors
     if (response.err) {
-      console.log('err', response.err)
-      return setError(response.err)
+      console.log(response.err)
+      return toast.error(response.err)
     }
 
     addPrompt(response.data)
-    console.log(response, '5')
   }
 
   return (
