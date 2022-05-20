@@ -1,0 +1,43 @@
+@import '../../index.scss';
+
+.form-input-container {
+  width: 100%;
+  max-width: $max-input-width;
+  margin: 2rem auto 0 auto;
+
+  label {
+    width: 100%;
+    textarea {
+      height: 10ch;
+      width: 100%;
+    }
+  }
+
+  .prompt-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+
+    button.generate-prompt-btn {
+      height: fit-content;
+      width: fit-content;
+      padding: 0;
+      border: none;
+      border-radius: $border-radius;
+      outline: none;
+
+      background: none;
+      color: $secondary-text;
+      font-size: 0.8rem;
+      cursor: pointer;
+
+      &:hover {
+        color: $primary-text;
+      }
+
+      &:focus {
+        outline: 2px solid $outline;
+      }
+    }
+  }
+}

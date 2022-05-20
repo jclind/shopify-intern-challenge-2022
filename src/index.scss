@@ -7,7 +7,18 @@
 $primary-background: color(primary-background);
 $primary-text: color(primary-text);
 $secondary-text: color(secondary-text);
+$tertiary-text: color(tertiary-text);
+$primary-color: color(primary-color);
+
 $font-family: 'Montserrat', sans-serif;
+
+$max-form-width: 550px;
+
+// Input/textarea variables
+$input-border-color: color(input-border-color);
+$outline: color(outline);
+$border-radius: 5px;
+$max-input-width: 500px;
 
 // GENERAL / CONTAINER STYLES
 html,
@@ -25,10 +36,57 @@ body {
   width: 100%;
 
   background: $primary-background;
-  color: $text-color;
+  color: $primary-text;
   font-family: $font-family;
 }
 
 p {
+  padding: 0;
+  margin: 0;
+
   color: $secondary-text;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  border: 0;
+  border-radius: $border-radius;
+  outline: 1px solid $input-border-color;
+  box-sizing: border-box;
+
+  background: none;
+  color: $primary-text;
+
+  &:focus {
+    outline: 2px solid $outline;
+  }
+}
+textarea {
+  resize: vertical;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: $border-radius;
+  outline: 0;
+
+  // background: $primary-color;
+  background: none;
+  // color: $primary-background;
+  color: $primary-text;
+  outline: 1px solid $input-border-color;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: 2px solid $outline;
+    color: $primary-color;
+  }
 }

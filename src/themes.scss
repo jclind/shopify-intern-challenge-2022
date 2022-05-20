@@ -1,8 +1,10 @@
 .app {
   --primary-background: #292929;
   --primary-text: #e9ecf0;
-  --secondary-text: #e9ecf0;
-  --main-color: #bb86fc;
+  --secondary-text: #94989e;
+  --tertiary-text: #6f7277;
+  --primary-color: #bb86fc;
+  --input-border-color: #7a7979;
   --caret-color: #f44c7f;
   --sub-color: #939eae;
   --sub-alt-color: #000000;
@@ -11,6 +13,7 @@
   --error-extra-color: #791717;
   --colorful-error-color: #c5da33;
   --colorful-error-extra-color: #849224;
+  --outline: #bb86fc;
 }
 
 @function color($color-name) {
