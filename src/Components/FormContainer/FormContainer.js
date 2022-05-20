@@ -5,6 +5,8 @@ import { toast } from 'react-toastify'
 import './FormContainer.scss'
 
 const FormContainer = ({ addPrompt }) => {
+  const [loading, setLoading] = useState(false)
+
   const fetchPromptResponse = async prompt => {
     return await fetch(
       'https://api.openai.com/v1/engines/text-davinci-002/completions',
@@ -37,26 +39,29 @@ const FormContainer = ({ addPrompt }) => {
   }
 
   // Handles prompt submittion errors and calls fetchPromptResponse and addResponse if no error
-  const handlePromptFormSubmit = async prompt => {
+  const handlePromptFormSubmit = async (prompt, setPrompt) => {
+    setLoading(true)
     // Show error if prompt is submitted with no length
     if (prompt.length <= 0) {
+      setLoading(false)
       return toast.error('Prompt must be 1 or more characters long')
     }
     if (prompt.length > 1000) {
+      setLoading(false)
       return toast.error('Prompt must be 1000 characters or less')
     }
 
     // Fetch prompt response from api
     const response = await fetchPromptResponse(prompt)
 
-    console.log(response)
     // Catch possible fetch errors
     if (response.err) {
-      console.log(response.err)
       return toast.error(response.err)
     }
 
     addPrompt(response.data)
+    setPrompt('')
+    setLoading(false)
   }
 
   return (
@@ -68,7 +73,10 @@ const FormContainer = ({ addPrompt }) => {
         cream shop." the AI will return "We serve up smiles with every scoop!"
         or a similar answer.
       </p>
-      <FormInput handlePromptFormSubmit={handlePromptFormSubmit} />
+      <FormInput
+        handlePromptFormSubmit={handlePromptFormSubmit}
+        loading={loading}
+      />
     </div>
   )
 }

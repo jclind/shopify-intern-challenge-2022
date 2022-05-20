@@ -1,15 +1,9 @@
 import React, { useState } from 'react'
-import { toast } from 'react-toastify'
+import { TailSpin } from 'react-loader-spinner'
 import './FormInput.scss'
 
-const FormInput = ({ handlePromptFormSubmit }) => {
+const FormInput = ({ handlePromptFormSubmit, loading }) => {
   const [promptVal, setPromptVal] = useState('')
-
-  const handlePromptChange = e => {
-    const newVal = e.target.value
-
-    return setPromptVal(e.target.value)
-  }
 
   // Fetches random sample prompt from samplePrompts.js array and enters it into the prompt form
   const generateSamplePrompt = () => {
@@ -25,7 +19,7 @@ const FormInput = ({ handlePromptFormSubmit }) => {
           id='prompt-input'
           placeholder='Enter Prompt...'
           value={promptVal}
-          onChange={handlePromptChange}
+          onChange={e => setPromptVal(e.target.value)}
         />
       </label>
       <div className='prompt-actions'>
@@ -39,9 +33,20 @@ const FormInput = ({ handlePromptFormSubmit }) => {
         <button
           type='submit'
           className='btn submit-prompt-btn'
-          onClick={() => handlePromptFormSubmit(promptVal.trim())}
+          onClick={() => handlePromptFormSubmit(promptVal.trim(), setPromptVal)}
+          disabled={loading}
         >
-          Submit
+          {loading ? (
+            <TailSpin
+              heigth='25'
+              width='25'
+              color='white'
+              arialLabel='loading'
+              className='spinner'
+            />
+          ) : (
+            'Submit'
+          )}
         </button>
       </div>
     </div>

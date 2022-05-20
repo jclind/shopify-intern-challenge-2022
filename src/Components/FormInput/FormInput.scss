@@ -39,5 +39,13 @@
         outline: 2px solid $outline;
       }
     }
+    button.submit-prompt-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      height: 35px;
+      width: 100px;
+    }
   }
 }
