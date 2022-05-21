@@ -13,7 +13,6 @@ function App() {
   const [promptHistory, setPromptHistory] = useState(() => {
     const promptHistoryLS = JSON.parse(localStorage.getItem('promptHistory'))
     if (promptHistoryLS) return promptHistoryLS
-
     return []
   })
 
