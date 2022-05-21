@@ -39,7 +39,7 @@ function App() {
   // Dark mode toggle bool
   const [isDark, setIsDark] = useState(() => {
     const darkThemeLS = JSON.parse(localStorage.getItem('dark-theme'))
-    if (darkThemeLS !== 'undefined') {
+    if (darkThemeLS !== 'undefined' && darkThemeLS !== null) {
       return darkThemeLS
     }
     return true
