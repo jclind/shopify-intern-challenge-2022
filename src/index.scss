@@ -11,7 +11,7 @@ $secondary-text: color(secondary-text);
 $tertiary-text: color(tertiary-text);
 $primary-color: color(primary-color);
 
-$error-color: color(error-color);
+$error-color: #ff5f5f;
 
 $font-family: 'Montserrat', sans-serif;
 
@@ -24,6 +24,8 @@ $input-border-color: color(input-border-color);
 $outline: color(outline);
 $border-radius: 5px;
 $max-input-width: 500px;
+
+$prompt-history-card-background: color(prompt-history-card-background);
 
 // GENERAL / CONTAINER STYLES
 html,
