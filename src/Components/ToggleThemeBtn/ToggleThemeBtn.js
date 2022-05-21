@@ -2,11 +2,11 @@ import React from 'react'
 import { BsCircle, BsMoonStars, BsSun } from 'react-icons/bs'
 import './ToggleThemeBtn.scss'
 
-const ToggleThemeBtn = ({ isDark, setIsDark }) => {
+const ToggleThemeBtn = ({ isDark, toggleIsDark }) => {
   return (
     <button
       className='light-dark-toggle-btn btn'
-      onClick={() => setIsDark(!isDark)}
+      onClick={() => toggleIsDark()}
     >
       <BsCircle
         className={isDark ? 'icon circle-icon dark' : 'icon circle-icon light'}

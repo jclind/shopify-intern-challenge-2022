@@ -35,13 +35,25 @@ function App() {
   }
 
   // Dark mode toggle bool
-  const [isDark, setIsDark] = useState(true)
+  const [isDark, setIsDark] = useState(() => {
+    const darkThemeLS = JSON.parse(localStorage.getItem('dark-theme'))
+    console.log(darkThemeLS)
+    if (darkThemeLS !== 'undefined') {
+      return darkThemeLS
+    }
+    return true
+  })
+  // Toggle dark theme in local storage for persistent state
+  const toggleIsDark = () => {
+    localStorage.setItem('dark-theme', JSON.stringify(!isDark))
+    setIsDark(!isDark)
+  }
 
   return (
     // <ToastProvider components={{ Toast: MyToast }}>
     <>
       <div className={isDark ? 'app dark-theme' : 'app light-theme'} id='app'>
-        <Navbar isDark={isDark} setIsDark={setIsDark} />
+        <Navbar isDark={isDark} toggleIsDark={toggleIsDark} />
         <div className='page-content'>
           <FormContainer promptHistory={promptHistory} addPrompt={addPrompt} />
           <PromptHistoryContainer

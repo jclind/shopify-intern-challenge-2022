@@ -3,12 +3,12 @@ import ToggleThemeBtn from '../ToggleThemeBtn/ToggleThemeBtn'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import './Navbar.scss'
 
-const Navbar = ({ isDark, setIsDark }) => {
+const Navbar = ({ isDark, toggleIsDark }) => {
   return (
     <nav>
       <div className='nav-center'>
         <div className='left'>
-          <ToggleThemeBtn isDark={isDark} setIsDark={setIsDark} />
+          <ToggleThemeBtn isDark={isDark} toggleIsDark={toggleIsDark} />
         </div>
         <div className='right'>
           <div className='social-icons'>
