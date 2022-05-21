@@ -39,6 +39,7 @@ const FormInput = ({ handlePromptFormSubmit, loading }) => {
           placeholder='Enter Prompt...'
           value={promptVal}
           onChange={handleTextareaChange}
+          rows='6'
         />
       </label>
       <div className='prompt-actions'>

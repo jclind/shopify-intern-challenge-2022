@@ -66,16 +66,18 @@ p {
 input,
 textarea {
   padding: 0.5rem;
-  border: 0;
   border-radius: $border-radius;
-  outline: 1px solid $input-border-color;
+  outline: 0;
+  border: 1px solid $input-border-color;
+  -moz-outline-radius: $border-radius;
   box-sizing: border-box;
 
   background: none;
   color: $primary-text;
 
   &:focus {
-    outline: 2px solid $outline;
+    border: 2px solid $outline;
+    margin: -1px;
   }
 }
 textarea {
@@ -87,19 +89,18 @@ textarea {
   border: 0;
   border-radius: $border-radius;
   outline: 0;
+  box-sizing: border-box;
 
-  // background: $primary-color;
   background: none;
-  // color: $primary-background;
   color: $primary-text;
-  outline: 1px solid $input-border-color;
+  border: 1px solid $input-border-color;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
 
   &:hover,
   &:focus {
-    outline: 2px solid $outline;
+    border: 2px solid $outline;
     color: $primary-color;
   }
 }

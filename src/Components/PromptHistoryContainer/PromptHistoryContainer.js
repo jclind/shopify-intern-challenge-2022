@@ -10,15 +10,18 @@ const PromptHistory = ({ promptHistory, removePrompt, clearHistory }) => {
     <div className='prompt-history-container'>
       <label>Prompt History:</label>
       <div className='prompts'>
-        {promptHistory.map(prompt => {
-          return (
-            <PromptHistoryItem
-              key={prompt.id}
-              prompt={prompt}
-              removePrompt={removePrompt}
-            />
-          )
-        })}
+        {promptHistory
+          .slice()
+          .reverse()
+          .map(prompt => {
+            return (
+              <PromptHistoryItem
+                key={prompt.id}
+                prompt={prompt}
+                removePrompt={removePrompt}
+              />
+            )
+          })}
       </div>
       <button className='clear-prompt-btn' onClick={clearHistory}>
         Clear History

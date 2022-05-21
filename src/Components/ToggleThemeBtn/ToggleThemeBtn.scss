@@ -8,13 +8,9 @@
   height: 28px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-  outline: 2px solid $input-border-color;
   border-radius: 15px !important;
+  border-collapse: separate;
   background: $secondary-background !important;
-
-  // &:focus {
-  //   outline: 2px solid $primary-color;
-  // }
 
   .icon {
     height: 18px;
