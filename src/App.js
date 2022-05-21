@@ -10,59 +10,29 @@ import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   // Prompt History Data and Functionality
-  const [promptHistory, setPromptHistory] = useState([
-    {
-      id: 'cmpl-5A07d5APfRL43zwVp0p5sTeZd1lHy1',
-      object: 'text_completion',
-      created: 1653065433,
-      model: 'text-davinci:002',
-      choices: [
-        {
-          text: '\n\nThere are many ways to make a cake, but the most common way is to mix together flour, sugar, eggs, and butter, and then bake the mixture in an oven.',
-          index: 0,
-          logprobs: null,
-          finish_reason: 'stop',
-        },
-      ],
-      prompt: 'How do I make a cake?',
-    },
-    {
-      id: 'cmpl-5A07d5APfRL43zwVp0p5sTeZd1lHy2',
-      object: 'text_completion',
-      created: 1653065433,
-      model: 'text-davinci:002',
-      choices: [
-        {
-          text: '\n\nThere are many ways to make a cake, but the most common way is to mix together flour, sugar, eggs, and butter, and then bake the mixture in an oven.',
-          index: 0,
-          logprobs: null,
-          finish_reason: 'stop',
-        },
-      ],
-      prompt: 'How do I make a cake?',
-    },
-    {
-      id: 'cmpl-5A07d5APfRL43zwVp0p5sTeZd1lHy3',
-      object: 'text_completion',
-      created: 1653065433,
-      model: 'text-davinci:002',
-      choices: [
-        {
-          text: '\n\nThere are many ways to make a cake, but the most common way is to mix together flour, sugar, eggs, and butter, and then bake the mixture in an oven.',
-          index: 0,
-          logprobs: null,
-          finish_reason: 'stop',
-        },
-      ],
-      prompt: 'How do I make a cake?',
-    },
-  ])
+  const [promptHistory, setPromptHistory] = useState(() => {
+    const promptHistoryLS = JSON.parse(localStorage.getItem('promptHistory'))
+    if (promptHistoryLS) return promptHistoryLS
+
+    return []
+  })
+
+  const savePromptHistory = data => {
+    localStorage.setItem('promptHistory', JSON.stringify(data))
+  }
+
   const addPrompt = promptData => {
-    console.log(promptData)
-    setPromptHistory([...promptHistory, promptData])
+    const updatedPromptHistory = [...promptHistory, promptData]
+    setPromptHistory(updatedPromptHistory)
+    savePromptHistory(updatedPromptHistory)
   }
   const removePrompt = promptID => {
-    setPromptHistory(promptHistory.filter(prompt => prompt.id !== promptID))
+    // Filter out prompt with passed id
+    const updatedPromptHistory = promptHistory.filter(
+      prompt => prompt.id !== promptID
+    )
+    setPromptHistory(updatedPromptHistory)
+    savePromptHistory(updatedPromptHistory)
   }
 
   // Dark mode toggle bool

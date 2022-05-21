@@ -38,7 +38,7 @@ const FormContainer = ({ addPrompt }) => {
       })
   }
 
-  // Handles prompt submittion errors and calls fetchPromptResponse and addResponse if no error
+  // Handles prompt submission errors and calls fetchPromptResponse and addResponse if no error
   const handlePromptFormSubmit = async (prompt, setPrompt) => {
     setLoading(true)
     // Show error if prompt is submitted with no length
