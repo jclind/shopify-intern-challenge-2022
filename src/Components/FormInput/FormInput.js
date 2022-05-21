@@ -1,17 +1,25 @@
 import React, { useState } from 'react'
 import { TailSpin } from 'react-loader-spinner'
 import { toast } from 'react-toastify'
+import { samplePrompts } from '../../assets/data/samplePrompts'
+import { getRandomArrayElement } from '../../utils/getRandomArrayElement'
 import './FormInput.scss'
 
 const FormInput = ({ handlePromptFormSubmit, loading }) => {
   const [promptVal, setPromptVal] = useState('')
 
   // Fetches random sample prompt from samplePrompts.js array and enters it into the prompt form
+  const [prevPrompt, setPrevPrompt] = useState('')
   const generateSamplePrompt = () => {
     if (loading) {
       return toast.error('Please wait until previous request has returned.')
     }
-    setPromptVal('How do I make a cake?')
+
+    // Get random prompt, will not return element equal to prevPrompt
+    let randPrompt = getRandomArrayElement(samplePrompts, prevPrompt)
+
+    setPrevPrompt(randPrompt)
+    setPromptVal(randPrompt)
   }
 
   const handleTextareaChange = e => {
