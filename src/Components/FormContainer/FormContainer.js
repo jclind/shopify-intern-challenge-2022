@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import FormInput from '../FormInput/FormInput'
 import { toast } from 'react-toastify'
+import { AiOutlineRight } from 'react-icons/ai'
 
 import './FormContainer.scss'
 
@@ -71,7 +72,14 @@ const FormContainer = ({ addPrompt }) => {
         Input a text prompt and OpenAI will return a response that attempts to
         answer/match your prompt. E.g. with prompt "Write a tagline for an ice
         cream shop." the AI will return "We serve up smiles with every scoop!"
-        or a similar answer.
+        or a similar answer.{' '}
+        <a
+          href='https://beta.openai.com/docs/guides/completion'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Learn More <AiOutlineRight className='icon' />
+        </a>
       </p>
       <FormInput
         handlePromptFormSubmit={handlePromptFormSubmit}

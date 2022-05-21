@@ -23,7 +23,7 @@ const PromptHistory = ({ promptHistory, removePrompt, clearHistory }) => {
             )
           })}
       </div>
-      <button className='clear-prompt-btn' onClick={clearHistory}>
+      <button className='clear-history-btn' onClick={clearHistory}>
         Clear History
       </button>
     </div>

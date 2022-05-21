@@ -10,7 +10,30 @@
   max-width: $max-form-width;
   height: fit-content;
 
+  @media screen and (max-width: 600px) {
+    margin-top: 1rem;
+  }
+  @media screen and (max-width: 450px) {
+    margin-top: 0;
+  }
+
   .title {
     text-align: center;
+  }
+  .description {
+    a {
+      position: relative;
+      color: $primary-color;
+      .icon {
+        position: absolute;
+        top: 1px;
+        // transform: translateY(-50%);
+        bottom: 0;
+        margin: auto 0;
+
+        height: 8px;
+        width: 8px;
+      }
+    }
   }
 }
