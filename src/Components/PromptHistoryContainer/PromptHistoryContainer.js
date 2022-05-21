@@ -2,9 +2,8 @@ import React from 'react'
 import PromptHistoryItem from '../PromptHistoryItem/PromptHistoryItem'
 import './PromptHistoryContainer.scss'
 
-const PromptHistory = ({ promptHistory, removePrompt }) => {
-  console.log(promptHistory)
-
+const PromptHistory = ({ promptHistory, removePrompt, clearHistory }) => {
+  // Don't render anything if promptHistory is empty
   if (promptHistory.length <= 0) return null
 
   return (
@@ -21,6 +20,9 @@ const PromptHistory = ({ promptHistory, removePrompt }) => {
           )
         })}
       </div>
+      <button className='clear-prompt-btn' onClick={clearHistory}>
+        Clear History
+      </button>
     </div>
   )
 }

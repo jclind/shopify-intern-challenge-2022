@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Footer from './Components/Footer/Footer'
 import FormContainer from './Components/FormContainer/FormContainer'
 import Navbar from './Components/Navbar/Navbar'
 import PromptHistoryContainer from './Components/PromptHistoryContainer/PromptHistoryContainer'
-import { ToastProvider } from 'react-toast-notifications'
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-// import { FaTimes } from 'react-icons/fa'
 
 function App() {
   // Prompt History Data and Functionality
@@ -33,24 +31,26 @@ function App() {
     setPromptHistory(updatedPromptHistory)
     savePromptHistory(updatedPromptHistory)
   }
+  const clearHistory = promptID => {
+    setPromptHistory([])
+    savePromptHistory([])
+  }
 
   // Dark mode toggle bool
   const [isDark, setIsDark] = useState(() => {
     const darkThemeLS = JSON.parse(localStorage.getItem('dark-theme'))
-    console.log(darkThemeLS)
     if (darkThemeLS !== 'undefined') {
       return darkThemeLS
     }
     return true
   })
-  // Toggle dark theme in local storage for persistent state
+  // Toggle dark theme and hold state in local storage for persistence
   const toggleIsDark = () => {
     localStorage.setItem('dark-theme', JSON.stringify(!isDark))
     setIsDark(!isDark)
   }
 
   return (
-    // <ToastProvider components={{ Toast: MyToast }}>
     <>
       <div className={isDark ? 'app dark-theme' : 'app light-theme'} id='app'>
         <Navbar isDark={isDark} toggleIsDark={toggleIsDark} />
@@ -59,6 +59,7 @@ function App() {
           <PromptHistoryContainer
             promptHistory={promptHistory}
             removePrompt={removePrompt}
+            clearHistory={clearHistory}
           />
         </div>
         <Footer />
@@ -71,12 +72,10 @@ function App() {
         closeOnClick
         rtl={false}
         pauseOnFocusLoss
-        draggable
         pauseOnHover
         theme='colored'
       />
     </>
-    // </ToastProvider>
   )
 }
 

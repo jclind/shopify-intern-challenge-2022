@@ -20,7 +20,7 @@ const FormContainer = ({ addPrompt }) => {
         body: JSON.stringify({
           prompt,
           temperature: 0,
-          max_tokens: 100,
+          max_tokens: 200,
         }),
       }
     )
