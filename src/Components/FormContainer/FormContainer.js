@@ -11,7 +11,7 @@ const FormContainer = ({ addPrompt }) => {
   // Make call to OpenAI and return response
   const fetchPromptResponse = async prompt => {
     return await fetch(
-      'https://api.openai.com/v1/engines/text-davinci-002/completions',
+      'https://api.openai.com/v1/engines/text-curie-001/completions',
       {
         method: 'POST',
         headers: {
