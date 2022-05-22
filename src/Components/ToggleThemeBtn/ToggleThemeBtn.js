@@ -5,8 +5,10 @@ import './ToggleThemeBtn.scss'
 const ToggleThemeBtn = ({ isDark, toggleIsDark }) => {
   return (
     <button
+      type='button'
       className='light-dark-toggle-btn btn'
       onClick={() => toggleIsDark()}
+      aria-label='Toggle Theme'
     >
       <BsCircle
         className={isDark ? 'icon circle-icon dark' : 'icon circle-icon light'}

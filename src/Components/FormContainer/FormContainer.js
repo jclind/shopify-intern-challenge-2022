@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import FormInput from '../FormInput/FormInput'
 import { toast } from 'react-toastify'
 import { AiOutlineRight } from 'react-icons/ai'

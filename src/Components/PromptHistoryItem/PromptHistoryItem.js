@@ -14,7 +14,12 @@ const PromptHistoryItem = ({ prompt, removePrompt }) => {
         <p className='text'>{prompt.choices[0].text}</p>
       </div>
       <div className='item-actions'>
-        <button className='delete' onClick={() => removePrompt(prompt.id)}>
+        <button
+          type='button'
+          className='delete'
+          onClick={() => removePrompt(prompt.id)}
+          aria-label='Delete'
+        >
           <BiTrash className='icon' />
         </button>
       </div>

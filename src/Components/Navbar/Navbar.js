@@ -15,6 +15,7 @@ const Navbar = ({ isDark, toggleIsDark }) => {
             <a
               href='https://github.com/jclind/shopify-intern-challenge-2022'
               className='github-link'
+              title='github'
               target='_blank'
               rel='noopener noreferrer'
             >
@@ -23,6 +24,7 @@ const Navbar = ({ isDark, toggleIsDark }) => {
             <a
               href='https://www.linkedin.com/in/jesseclind/'
               className='linkedin-link'
+              title='linkedin'
               target='_blank'
               rel='noopener noreferrer'
             >
