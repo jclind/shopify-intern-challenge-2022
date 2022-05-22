@@ -1,25 +1,25 @@
 .app {
-  --primary-background: #292929;
-  --secondary-background: #333333;
+  --primary-background: #202020;
+  --secondary-background: #2b2a2a;
   --primary-text: #e9ecf0;
   --secondary-text: #94989e;
-  --tertiary-text: #6f7277;
+  --tertiary-text: #8e9196;
   --primary-color: #bb86fc;
   --input-border-color: #7a7979;
-  --prompt-history-card-background: #333333;
+  --prompt-history-card-background: #2b2a2a;
   --outline: #bb86fc;
 }
 
 .app.light-theme {
   --primary-background: #eee;
-  --secondary-background: #d6d6d6;
-  --primary-text: #303841;
-  --secondary-text: #595f66;
-  --tertiary-text: #7c8288;
-  --primary-color: #a862fd;
+  --secondary-background: #c7c7c7;
+  --primary-text: #1e242b;
+  --secondary-text: #4e545a;
+  --tertiary-text: #4f555a;
+  --primary-color: #812de7;
   --input-border-color: #bebebe;
   --prompt-history-card-background: #e0e0e0;
-  --outline: #a862fd;
+  --outline: #812de7;
 }
 
 @function color($color-name) {
