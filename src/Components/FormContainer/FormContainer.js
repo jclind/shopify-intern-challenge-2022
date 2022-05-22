@@ -67,7 +67,7 @@ const FormContainer = ({ addPrompt }) => {
 
   return (
     <div className='form-container'>
-      <h1 className='title'>Fun With OpenAI</h1>
+      <h1 className='title'>Fun with GPT-3 AI</h1>
       <p className='description'>
         Input a text prompt and OpenAI will return a response that attempts to
         answer/match your prompt. E.g. with prompt "Write a tagline for an ice
