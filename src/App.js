@@ -14,14 +14,14 @@ function App() {
     return []
   })
 
-  const savePromptHistory = data => {
+  const savePromptHistoryToLocalStorage = data => {
     localStorage.setItem('promptHistory', JSON.stringify(data))
   }
 
   const addPrompt = promptData => {
     const updatedPromptHistory = [...promptHistory, promptData]
     setPromptHistory(updatedPromptHistory)
-    savePromptHistory(updatedPromptHistory)
+    savePromptHistoryToLocalStorage(updatedPromptHistory)
   }
   const removePrompt = promptID => {
     // Filter out prompt with passed id
@@ -29,11 +29,11 @@ function App() {
       prompt => prompt.id !== promptID
     )
     setPromptHistory(updatedPromptHistory)
-    savePromptHistory(updatedPromptHistory)
+    savePromptHistoryToLocalStorage(updatedPromptHistory)
   }
   const clearHistory = promptID => {
     setPromptHistory([])
-    savePromptHistory([])
+    savePromptHistoryToLocalStorage([])
   }
 
   // Dark mode toggle bool

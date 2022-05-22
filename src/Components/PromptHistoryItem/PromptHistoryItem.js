@@ -3,7 +3,6 @@ import { BiTrash } from 'react-icons/bi'
 import './PromptHistoryItem.scss'
 
 const PromptHistoryItem = ({ prompt, removePrompt }) => {
-  console.log(prompt)
   return (
     <div className='prompt-history-item'>
       <div className='text-section prompt'>

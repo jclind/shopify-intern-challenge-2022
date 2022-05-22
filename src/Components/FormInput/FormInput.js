@@ -58,7 +58,7 @@ const FormInput = ({ handlePromptFormSubmit, loading }) => {
         >
           {loading ? (
             <TailSpin
-              heigth='25'
+              height='25'
               width='25'
               color='white'
               arialLabel='loading'
