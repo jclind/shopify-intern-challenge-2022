@@ -1,32 +1,34 @@
-@import '../../index.scss';
+@import '../../vars.scss';
 
 .light-dark-toggle-btn {
   position: relative;
+
   display: flex;
   align-items: center;
-  width: 58px;
   height: 28px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 58px;
 
   border-radius: 15px !important;
-  border-collapse: separate;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
   background: $secondary-background !important;
 
   .icon {
     height: 18px;
     width: 18px;
   }
-
   .indicator-icon {
-    height: 16px;
-    width: 16px;
     position: absolute;
     overflow: visible;
     right: 0.45rem;
+    transform: visibility 0s, opacity 1s;
     visibility: none;
     opacity: 0;
+
+    height: 16px;
+    width: 16px;
+
     stroke-width: 0.8;
-    transform: visibility 0s, opacity 1s;
   }
   .indicator-icon.toggle {
     -webkit-animation-name: show_icon;
@@ -37,12 +39,11 @@
     -moz-animation-duration: 0.4s;
     -ms-animation-duration: 0.4s;
     animation-duration: 0.4s;
-    // visibility: visible;
     opacity: 1;
   }
   .indicator-icon.light {
-    right: auto;
     left: 0.45rem;
+    right: auto;
   }
 }
 

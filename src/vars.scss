@@ -1,0 +1,27 @@
+// Import Montserrat font
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap');
+@import './themes.scss';
+
+// VARIABLES
+$primary-background: color(primary-background);
+$secondary-background: color(secondary-background);
+$primary-text: color(primary-text);
+$secondary-text: color(secondary-text);
+$tertiary-text: color(tertiary-text);
+$primary-color: color(primary-color);
+
+$error-color: #ff5f5f;
+
+$font-family: 'Montserrat', sans-serif;
+
+$max-form-width: 550px;
+
+$max-nav-width: 800px;
+
+// Input/textarea variables
+$input-border-color: color(input-border-color);
+$outline: color(outline);
+$border-radius: 5px;
+$max-input-width: 500px;
+
+$prompt-history-card-background: color(prompt-history-card-background);

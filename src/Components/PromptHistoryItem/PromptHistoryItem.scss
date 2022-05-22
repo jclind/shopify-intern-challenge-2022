@@ -1,10 +1,11 @@
-@import '../../index.scss';
+@import '../../vars.scss';
 
 .prompt-history-item {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
+
   border-radius: $border-radius;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
@@ -12,38 +13,42 @@
 
   .text-section {
     label {
-      font-size: 0.7rem;
       color: $tertiary-text;
+      font-size: 0.7rem;
       text-transform: uppercase;
     }
     p.text {
       padding-top: 0.25rem;
-      text-align: start;
       margin: 0;
+
       color: $primary-text;
       font-weight: 400;
+      text-align: start;
     }
   }
 
   .item-actions {
     display: flex;
     justify-content: flex-end;
+
     .delete {
       display: flex;
       justify-content: center;
       align-items: center;
-      color: $tertiary-text;
-      cursor: pointer;
-      background: none;
-      width: fit-content;
+
       height: fit-content;
+      width: fit-content;
+
       border: none;
       border-radius: $border-radius;
+
+      color: $tertiary-text;
+      background: none;
+      cursor: pointer;
 
       &:focus {
         outline: 2px solid $outline;
       }
-
       &:hover {
         color: $error-color;
       }

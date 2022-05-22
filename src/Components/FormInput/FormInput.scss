@@ -1,4 +1,4 @@
-@import '../../index.scss';
+@import '../../vars.scss';
 
 .form-input-container {
   width: 100%;
@@ -11,7 +11,6 @@
       width: 100%;
     }
   }
-
   .prompt-actions {
     display: flex;
     justify-content: space-between;
@@ -21,28 +20,30 @@
       height: fit-content;
       width: fit-content;
       padding: 0;
+
       border: 2px solid transparent;
-      outline: none;
       border-radius: $border-radius;
+      outline: none;
 
       background: none;
       color: $secondary-text;
       font-size: 0.8rem;
+
       cursor: pointer;
 
       &:hover {
         color: $primary-text;
       }
-
       &:focus {
         border: 2px solid $outline !important;
       }
     }
     button.submit-prompt-btn {
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+
       height: 35px;
       width: 100px;
     }

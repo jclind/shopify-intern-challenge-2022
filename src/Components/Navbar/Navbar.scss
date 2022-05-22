@@ -1,12 +1,14 @@
-@import '../../index.scss';
+@import '../../vars.scss';
 
 nav {
   display: flex;
-  justify-content: center;
   flex-shrink: 0;
+  justify-content: center;
+
   height: 4rem;
-  padding-top: 0.5rem;
   width: 100%;
+  padding-top: 0.5rem;
+
   .nav-center {
     display: flex;
     justify-content: space-between;
@@ -24,7 +26,6 @@ nav {
         display: flex;
         gap: 1rem;
       }
-
       a {
         .icon {
           height: 26px;
